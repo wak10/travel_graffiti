@@ -24,14 +24,14 @@ console:
 db.create:
 	docker-compose run --rm web bundle exec rails db:create
 
-db.apply:
-	docker-compose run --rm web bundle exec rake ridgepole:apply
+# db.apply:
+# 	docker-compose run --rm web bundle exec rake ridgepole:apply
 
 db.seed_fu:
 	docker-compose run --rm web bundle exec rails db:seed_fu
 
-db.dry_run:
-	docker-compose run --rm web bundle exec rake ridgepole:dry_run
+# db.dry_run:
+# 	docker-compose run --rm web bundle exec rake ridgepole:dry_run
 
 db.drop:
 	docker-compose run --rm web bundle exec rails db:drop
@@ -39,17 +39,17 @@ db.drop:
 db.reset:
 	make db.drop
 	make db.create
-	make db.apply
+# make db.apply
 
 init:
 	make build
 	make bundle_install
 	make db.create
-	make db.apply
+# make db.apply
 	make db.seed_fu
 
-rubocop:
-	docker-compose run --rm web bundle exec rubocop
+# rubocop:
+# 	docker-compose run --rm web bundle exec rubocop
 
-rubocop.correct:
-	docker-compose run --rm web bundle exec rubocop -A
+# rubocop.correct:
+# 	docker-compose run --rm web bundle exec rubocop -A

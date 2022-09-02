@@ -71,7 +71,6 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'ridgepole'
 gem 'devise'
 gem 'devise-i18n'
 gem 'carrierwave'
@@ -80,3 +79,4 @@ gem "gmaps4rails"
 gem "geocoder"
 gem "gon"
 gem "dotenv-rails"
+gem 'haml-rails'
