@@ -1,0 +1,5 @@
+%h1 投稿新規
+
+= form_with model: @post, url: posts_path, local:true do |f|
+  = f.text_area :message
+  = f.submit '投稿する'
