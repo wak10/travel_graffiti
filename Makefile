@@ -21,6 +21,9 @@ bash:
 console:
 	docker-compose exec web bundle exec rails c
 
+routes:
+	docker-compose exec web rails routes
+
 db.create:
 	docker-compose run --rm web bundle exec rails db:create
 

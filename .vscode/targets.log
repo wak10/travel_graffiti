@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Fri Sep  2 14:34:14 2022
+# Make data base, printed on Thu Sep  8 18:31:10 2022
 
 # Variables
 
@@ -28,7 +28,7 @@ CURDIR := /Users/takahirochiba/Desktop/travel_graffiti
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"0eea3b1222777374459e015adf6fd29b.ja","_translationsConfigFile":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja/tcf.json","_cacheRoot":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja","_resolvedLanguagePackCoreLocation":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"0eea3b1222777374459e015adf6fd29b.ja","_translationsConfigFile":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja/tcf.json","_cacheRoot":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja","_resolvedLanguagePackCoreLocation":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja/784b0177c56c607789f9638da7b6bf3230d47a8c","_corruptedFile":"/Users/takahirochiba/Library/Application Support/Code/clp/0eea3b1222777374459e015adf6fd29b.ja/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
@@ -42,13 +42,13 @@ VSCODE_CWD = /Users/takahirochiba/Desktop/travel_graffiti
 # environment
 PATH = /opt/homebrew/opt/openssl@3/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 # environment
-LaunchInstanceID = 326650FC-F7C9-433A-B9D2-12A55FF119F1
+LaunchInstanceID = 98B250CF-218F-4766-B1FC-4EF39DC1A8B5
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.2fak2SSaHB/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.HVjWBOwUNc/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -68,7 +68,7 @@ MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/takahirochiba/Library/Application Support/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
+VSCODE_CODE_CACHE_PATH = /Users/takahirochiba/Library/Application Support/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
 # environment
 LOGNAME = takahirochiba
 # environment
@@ -96,7 +96,7 @@ USER = takahirochiba
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:C8C01FFE-1945-4237-8BE7-739CAE60346F
+TERM_SESSION_ID = w0t0p0:59846915-3AB4-400C-AC0A-0B4EE7CA0AE3
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -110,7 +110,7 @@ TMPDIR = /var/folders/83/37y6nlfd4534wq4d1dyfq37r0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/takahirochiba/Library/Application Support/Code/1.70.0-main.sock
+VSCODE_IPC_HOOK = /Users/takahirochiba/Library/Application Support/Code/1.71.0-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -122,7 +122,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.25811599.25811605.99685274-7563-483A-88F1-D5635744CA47
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.27448159.27448166.911A51D3-C2F8-4FE3-8C2C-C19AD073CD77
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # environment
@@ -132,7 +132,7 @@ HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:C8C01FFE-1945-4237-8BE7-739CAE60346F
+ITERM_SESSION_ID = w0t0p0:59846915-3AB4-400C-AC0A-0B4EE7CA0AE3
 # environment
 HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
@@ -164,7 +164,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 634
+VSCODE_PID = 598
 # variable set hash-table stats:
 # Load=77/1024=8%, Rehash=0, Collisions=4/101=4%
 
@@ -174,7 +174,7 @@ VSCODE_PID = 634
 
 # Directories
 
-# . (device 16777231, inode 23928791): 27 files, no impossibilities.
+# . (device 16777233, inode 23928791): 27 files, no impossibilities.
 
 # 27 files, no impossibilities in 1 directories.
 
@@ -183,14 +183,6 @@ VSCODE_PID = 634
 # No implicit rules.
 
 # Files
-
-rubocop:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 52):
-	docker-compose run --rm web bundle exec rubocop
-	
 
 # Not a target:
 all:
@@ -205,7 +197,7 @@ db.create:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 25):
+#  commands to execute (from `Makefile', line 28):
 	docker-compose run --rm web bundle exec rails db:create
 	
 
@@ -213,10 +205,9 @@ db.reset:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 40):
+#  commands to execute (from `Makefile', line 43):
 	make db.drop
 	make db.create
-	make db.apply
 	
 
 up:
@@ -225,14 +216,6 @@ up:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 4):
 	docker-compose up -d
-	
-
-rubocop.correct:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 55):
-	docker-compose run --rm web bundle exec rubocop -A
 	
 
 # Not a target:
@@ -244,7 +227,7 @@ rubocop.correct:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-01 15:21:42
+#  Last modified 2022-09-02 18:29:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -254,7 +237,7 @@ db.seed_fu:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 31):
+#  commands to execute (from `Makefile', line 34):
 	docker-compose run --rm web bundle exec rails db:seed_fu
 	
 
@@ -272,14 +255,6 @@ build:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 7):
 	docker-compose build
-	
-
-db.dry_run:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 34):
-	docker-compose run --rm web bundle exec rake ridgepole:dry_run
 	
 
 # Not a target:
@@ -300,10 +275,7 @@ db.drop:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
-make: *** No rule to make target `all'.  Stop.
-
-#  commands to execute (from `Makefile', line 37):
+#  commands to execute (from `Makefile', line 40):
 	docker-compose run --rm web bundle exec rails db:drop
 	
 
@@ -311,11 +283,10 @@ init:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 45):
+#  commands to execute (from `Makefile', line 48):
 	make build
 	make bundle_install
 	make db.create
-	make db.apply
 	make db.seed_fu
 	
 
@@ -327,12 +298,15 @@ bash:
 	docker-compose run --rm web bash
 	
 
-db.apply:
+routes:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
-	docker-compose run --rm web bundle exec rake ridgepole:apply
+#  commands to execute (from `Makefile', line 25):
+ 
+make: *** No rule to make target `all'.  Stop.
+
+	docker-compose exec web rails routes
 	
 
 down:
@@ -352,7 +326,7 @@ ps:
 	
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/32=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/29=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -364,6 +338,6 @@ ps:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Sep  2 14:34:14 2022
+# Finished Make data base on Thu Sep  8 18:31:10 2022
 
  
