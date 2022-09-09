@@ -1,0 +1,7 @@
+%h1 投稿編集
+= button_to "削除ボタン２", post_path(@post), method: :delete
+
+= form_with model: @post, url: post_path, local:true do |f|
+  = f.text_area :message
+  = f.submit '更新する'
+
