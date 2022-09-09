@@ -80,3 +80,5 @@ gem "geocoder"
 gem "gon"
 gem "dotenv-rails"
 gem 'haml-rails'
+gem 'pry-rails'
+
