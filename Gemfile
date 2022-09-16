@@ -75,10 +75,14 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
+
+# マップ処理用
 gem "gmaps4rails"
 gem "geocoder"
 gem "gon"
 gem "dotenv-rails"
+
+# その他
 gem 'haml-rails'
 gem 'pry-rails'
 
