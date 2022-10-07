@@ -1,1 +1,1 @@
-{"buildTargets":["bash","build","bundle_install","console","db.create","db.drop","db.reset","db.seed_fu","down","init","make","ps","routes","up"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["bash","build","bundle_install","console","db.create","db.drop","db.reset","db.seed_fu","down","init","ps","routes","up"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
