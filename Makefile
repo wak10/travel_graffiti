@@ -49,7 +49,7 @@ init:
 	make bundle_install
 	make db.create
 # make db.apply
-	make db.seed_fu
+# make db.seed_fu
 
 # rubocop:
 # 	docker-compose run --rm web bundle exec rubocop

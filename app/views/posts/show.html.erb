@@ -1,31 +1,30 @@
-<script type="text/javascript">
-     function initMap() {
-       var test = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
-       var map = new google.maps.Map(document.getElementById('map'), {
-                 zoom: 15, 
-                 center: test
-                 });
-       var transitLayer = new google.maps.TransitLayer();
-       transitLayer.setMap(map);
-       var contentString = '住所：<%= @post.address %>';
-       var infowindow = new google.maps.InfoWindow({
-         content: contentString
-       });
-       var marker = new google.maps.Marker({
-                     position:test,
-                     map: map,
-                     title: contentString
-                   });
-       marker.addListener('click', function() {
-         infowindow.open(map, marker);
-       });
-     }
-   </script>
-   <script async defer
-             src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-   </script>
-   <style type="text/css">
-     #map { height: 200px;
-           width: 70%;}
-   </style>
-   <div id="map"></div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>adress:</strong>
+  <%= @post.adress %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @post.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @post.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<div id="map" style="width: 800px; height: 400px;"></div>
+
+<script>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
