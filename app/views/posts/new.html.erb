@@ -1,0 +1,13 @@
+<%= form_with(model: @post) do |f| %>
+  <div>
+    <%= f.label :メッセージ %>
+    <%= f.text_field :message %>
+  </div>
+  <div>
+    <%= f.label :住所 %>
+    <%= f.text_field :address %>
+  </div>
+  <div>
+    <%= f.submit :投稿する %>
+  </div>
+ <% end %>

@@ -45,13 +45,14 @@
 
 - ****[Railsで手書きの図や絵をプログラムに取り込む方法](http://hamasyou.com/blog/2013/12/03/rails/)****
 - ****[RailsアプリにGoogle Mapから緯度経度情報を取得する機能を追加する](https://bagelee.com/programming/rails-google-map/)****
+- ****[railsでGoogle Mapの表示の仕方](https://note.com/mosanei/n/n460548e2a62b)****
 
 補助参考
 
 - ****[Rails アプリにGoogleMap APIを導入する](https://zenn.dev/takuyanagai0213/articles/e2467175bdd5fc)****
 - ****[【rails】google maps api　地図情報含んだ投稿をして表示させる方法](https://qiita.com/sho-17/items/0854d59d52d9c3679370)****
 - ****[Railsで地図 投稿 地名検索 一覧表示 GoogleMapsAPI(JavaScript) gemなし](https://qiita.com/kakeru0520sou1/items/9a39b3a122a8be5b9b65)****
-- [しょうさんのGPSアプリ](https://codepen.io/syohei-yamaki/pen/KKqvLvv)
+- ****[しょうさんのGPSアプリ](https://codepen.io/syohei-yamaki/pen/KKqvLvv)****
 
 環境構築参考
 
