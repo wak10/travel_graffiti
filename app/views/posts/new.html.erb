@@ -1,13 +1,73 @@
-<%= form_with(model: @post) do |f| %>
-  <div>
-    <%= f.label :メッセージ %>
-    <%= f.text_field :message %>
-  </div>
-  <div>
-    <%= f.label :住所 %>
-    <%= f.text_field :address %>
-  </div>
-  <div>
-    <%= f.submit :投稿する %>
-  </div>
- <% end %>
+<h2>新規投稿</h2>
+
+<button id="button">位置情報を取得する</button>
+<div class="results">
+  <p>緯度： <span id="latitude">-</span></p>
+  <p>経度： <span id="longitude">-</span></p>
+</div>
+    
+<%= form_with model: @post, url: posts_path, local: true do |f| %>
+  <%= f.hidden_field :latitude , value: latitude %>
+  <%= f.hidden_field :longitude , value: longitude %>
+  <%= f.text_area :message %>
+  <%= f.submit '投稿する' %>
+<% end %>
+
+<div id='map'></div>
+    
+<style>
+#map {
+  height: 600px;
+  width: 600px;
+}
+</style>
+
+<script>
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.6809591, lng: 139.7673068},
+    zoom: 14,
+  });
+
+  marker = new google.maps.Marker({
+    position: {lat: 35.6809591, lng: 139.7673068},
+    map: map
+  });
+}
+
+const $button = document.getElementById('button');
+
+// ボタンをクリックしたときのイベント
+$button.addEventListener('click', function() {
+  // ボタンのテキストを取得中に変更する
+  $button.innerText = "取得中...";
+  // 位置情報を取得する
+  navigator.geolocation.getCurrentPosition(success, error);
+});
+
+// 成功したときの処理
+function success(pos) {
+  const crd = pos.coords;
+  document.getElementById("latitude").innerText = crd.latitude;
+  document.getElementById("longitude").innerText = crd.longitude;
+  $button.innerText = '位置情報を取得する';
+
+
+  map.setCenter({ lat: crd.latitude, lng: crd.longitude });
+  var marker = new google.maps.Marker({
+      map: map,
+      position: { lat: crd.latitude, lng: crd.longitude }
+  });
+}
+
+// エラーが発生したときの処理
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+  $button.innerText = '位置情報を取得する';
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY']%>&callback=initMap" async defer></script>

@@ -9,7 +9,7 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = include_gon
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_importmap_tags 
   %body
     = yield
     %script{src: "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_MAP_KEY"]}&callback=initMap"}

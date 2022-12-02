@@ -1,9 +1,0 @@
-%h1 投稿一覧
-
-%h3
-  = link_to '新規作成', new_post_path(@post)
-
-- @posts.each do |post|
-  %h4
-    = post.message
-    = link_to '編集', edit_post_path(post)
