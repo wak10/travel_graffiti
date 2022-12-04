@@ -2,13 +2,11 @@
 
 <button id="button">位置情報を取得する</button>
 <div class="results">
-  <p>緯度： <span id="latitude">-</span></p>
-  <p>経度： <span id="longitude">-</span></p>
+<p>緯度： <span id="latitude">-</span></p>
+<p>経度： <span id="longitude">-</span></p>
 </div>
-    
+
 <%= form_with model: @post, url: posts_path, local: true do |f| %>
-  <%= f.hidden_field :latitude , value: "latitude" %>
-  <%= f.hidden_field :longitude , value: "longitude" %>
   <%= f.text_area :message %>
   <%= f.submit '投稿する' %>
 <% end %>
@@ -56,7 +54,6 @@ function success(pos) {
   document.getElementById("longitude").innerText = crd.longitude;
   $button.innerText = '位置情報を取得する';
 
-
   map.setCenter({ lat: crd.latitude, lng: crd.longitude });
   var marker = new google.maps.Marker({
       map: map,
@@ -70,4 +67,3 @@ function error(err) {
   $button.innerText = '位置情報を取得する';
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY']%>&callback=initMap" async defer></script>
