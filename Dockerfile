@@ -1,11 +1,14 @@
-FROM ruby:3.1
+FROM ruby:3.1.2
 
-RUN mkdir /myapp
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+RUN mkdir /app
+WORKDIR /app
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+ENV BUNDLER_VERSION 2.3.7
+RUN gem install bundler -v 2.3.7
+RUN bundle update --bundler 
 RUN bundle install
-COPY . /myapp
+COPY . /app
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
