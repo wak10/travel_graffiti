@@ -7,8 +7,8 @@
 </div>
     
 <%= form_with model: @post, url: posts_path, local: true do |f| %>
-  <%= f.hidden_field :latitude , value: latitude %>
-  <%= f.hidden_field :longitude , value: longitude %>
+  <%= f.hidden_field :latitude , value: "latitude" %>
+  <%= f.hidden_field :longitude , value: "longitude" %>
   <%= f.text_area :message %>
   <%= f.submit '投稿する' %>
 <% end %>
@@ -17,8 +17,8 @@
     
 <style>
 #map {
-  height: 600px;
-  width: 600px;
+  height: 400px;
+  width: 400px;
 }
 </style>
 
