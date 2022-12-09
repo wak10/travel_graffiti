@@ -6,15 +6,13 @@ class PostsController < ApplicationController
   
   def new
     @post = Post.new
+
+    if params[:latitude].present? && params[:longitude].present?
+      register
+    end
   end
   
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to posts_path
-    else
-      render :new
-    end
   end
   
   def show
@@ -42,6 +40,14 @@ class PostsController < ApplicationController
   end
   
   private
+
+  def register
+    @post.latitude = params[:latitude]
+    @post.longitude = params[:longitude]
+
+    @post.save
+  end
+
   
   def post_params
     params.require(:post).permit(:message, :address, :latitude, :longitude)

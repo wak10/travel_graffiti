@@ -2,16 +2,13 @@
 
 <button id="button">位置情報を取得する</button>
 <div class="results">
-<p>緯度： <span id="latitude">-</span></p>
-<p>経度： <span id="longitude">-</span></p>
+  <p>緯度： <span id="latitude">-</span></p>
+  <p>経度： <span id="longitude">-</span></p>
 </div>
 
-<%= form_with model: @post, url: posts_path, local: true do |f| %>
-  <%= f.text_area :message %>
-  <%= f.submit '投稿する' %>
-<% end %>
-
 <div id='map'></div>
+
+<%= link_to "一覧に戻る", posts_path %>
     
 <style>
 #map {
