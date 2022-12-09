@@ -49,15 +49,32 @@ $button.addEventListener('click', function() {
 
 // 成功したときの処理
 function success(pos) {
-  const crd = pos.coords;
-  document.getElementById("latitude").innerText = crd.latitude;
-  document.getElementById("longitude").innerText = crd.longitude;
+  const lat = pos.coords.latitude;
+  const lng = pos.coords.longitude;
+
+  document.getElementById("latitude").innerText = lat;
+  document.getElementById("longitude").innerText = lng;
   $button.innerText = '位置情報を取得する';
 
-  map.setCenter({ lat: crd.latitude, lng: crd.longitude });
+  $.ajax({
+       url: "http://localhost:9000/posts/new",
+       type: "GET",
+       data: {
+         latitude: lat,
+         longitude: lng
+       },
+       success: function(data) {
+         alert("現在地を取得しました");
+       },
+       error: function(data) {
+         alert("現在地を保存できませんでした");
+       }
+  });
+
+  map.setCenter({ lat: lat, lng: lng });
   var marker = new google.maps.Marker({
       map: map,
-      position: { lat: crd.latitude, lng: crd.longitude }
+      position: { lat: lat, lng: lng }
   });
 }
 

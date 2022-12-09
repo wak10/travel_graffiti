@@ -84,5 +84,6 @@ gem "dotenv-rails"
 
 # その他
 gem 'haml-rails'
-gem 'pry-rails'
-
+gem 'pry-byebug'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
