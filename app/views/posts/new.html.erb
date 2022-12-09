@@ -1,83 +1,74 @@
-<h2>新規投稿</h2>
+<%= form_with model: @post, url: posts_path, local:true do |f| %>
+  <div class="actions">
+    <%= f.label :message,"メッセージ" %>
+    <%= f.text_field :message %>
+    <%= f.label :latitude,"緯度" %>
+    <%= f.text_field :latitude, id: :lat %>
+    <%= f.label :longitude,"経度" %>
+    <%= f.text_field :longitude, id: :lng %>
+    <%= f.submit %>
+  </div>
+<% end %>
 
-<button id="button">位置情報を取得する</button>
-<div class="results">
-  <p>緯度： <span id="latitude">-</span></p>
-  <p>経度： <span id="longitude">-</span></p>
-</div>
-
+<input id="address" type="textbox">
+<input type="button" value="検索" onclick="codeAddress()">
+<p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
 <div id='map'></div>
 
-<%= link_to "一覧に戻る", posts_path %>
-    
 <style>
 #map {
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 600px;
 }
 </style>
 
 <script>
+//初期マップの設定
 let map
-
+let marker
 function initMap(){
   geocoder = new google.maps.Geocoder()
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 35.6809591, lng: 139.7673068},
-    zoom: 14,
-  });
+    center:  {lat: 35.6803997, lng:139.7690174},
+    zoom: 15,
 
-  marker = new google.maps.Marker({
-    position: {lat: 35.6809591, lng: 139.7673068},
-    map: map
   });
 }
 
-const $button = document.getElementById('button');
+//検索後のマップ作成
+let geocoder
+let aft
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
 
-// ボタンをクリックしたときのイベント
-$button.addEventListener('click', function() {
-  // ボタンのテキストを取得中に変更する
-  $button.innerText = "取得中...";
-  // 位置情報を取得する
-  navigator.geolocation.getCurrentPosition(success, error);
-});
+        if (aft == true){
+            marker.setMap(null);
+        }
 
-// 成功したときの処理
-function success(pos) {
-  const lat = pos.coords.latitude;
-  const lng = pos.coords.longitude;
 
-  document.getElementById("latitude").innerText = lat;
-  document.getElementById("longitude").innerText = lng;
-  $button.innerText = '位置情報を取得する';
+        map.setCenter(results[0].geometry.location);
+            marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            draggable: true
+        });
 
-  $.ajax({
-       url: "http://localhost:9000/posts/new",
-       type: "GET",
-       data: {
-         latitude: lat,
-         longitude: lng
-       },
-       success: function(data) {
-         alert("現在地を取得しました");
-       },
-       error: function(data) {
-         alert("現在地を保存できませんでした");
-       }
-  });
+        aft = true
 
-  map.setCenter({ lat: lat, lng: lng });
-  var marker = new google.maps.Marker({
-      map: map,
-      position: { lat: lat, lng: lng }
-  });
+        document.getElementById('lat').value = results[0].geometry.location.lat();
+        document.getElementById('lng').value = results[0].geometry.location.lng();
+
+        google.maps.event.addListener( marker, 'dragend', function(ev){
+            document.getElementById('lat').value = ev.latLng.lat();
+            document.getElementById('lng').value = ev.latLng.lng();
+        });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
 }
 
-// エラーが発生したときの処理
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-  $button.innerText = '位置情報を取得する';
-}
 </script>

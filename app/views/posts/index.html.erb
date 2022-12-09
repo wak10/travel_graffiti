@@ -1,8 +1,54 @@
-<% @posts.each do |post| %>
-  <p>
-    <%= post.id %>
-    <%= post.message %>
-    <%= post.latitude %>
-    <%= post.longitude %>
-  <p>
-<% end %>
+<%= link_to "新規投稿", new_post_path %>
+
+<div id='map'></div>
+
+<style>
+#map {
+  height: 600px;
+  width: 100%;
+}
+</style>
+
+<script>
+    function initMap() {
+
+      //初期表示位置
+      let latlng = new google.maps.LatLng(38.60, 139.5);
+      //デザイン
+      let styles = [
+           {
+            stylers: [
+             { "saturation": 0 },
+             { "lightness": 0 }
+            ]
+           }
+          ];
+
+      let map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 5.5,
+          styles: styles,
+          center: latlng
+      });
+      let transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+
+
+      <% @posts.each do |post|%>
+        ( function() { 
+          let markerLatLng = new google.maps.LatLng({lat: <%= post.latitude %>, lng: <%= post.longitude %>});
+          let marker = new google.maps.Marker({ 
+            position: markerLatLng, 
+            map: map 
+          });
+
+          let infowindow = new google.maps.InfoWindow({
+            position: markerLatLng,
+            content: "<a href='<%= post_url(post.id) %>' target='_blank'><%= post.message %></a>"
+          });
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+       })();
+      <% end %>
+  }
+</script>
