@@ -4,7 +4,7 @@ up:
 	docker-compose up -d
 
 build:
-	docker build --platform amd64 ./
+	docker-compose build
 
 down:
 	docker-compose down
